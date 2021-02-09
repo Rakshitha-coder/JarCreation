@@ -2,7 +2,7 @@
 steps:
   - id: "get build number"
     name: gcr.io/cloud-builders/git
-    dir: 'JarCreation/'
+    dir: 'JarCreation/word-count-beam'
     entrypoint: 'bash'
     args:
       - '-c'
@@ -12,7 +12,7 @@ steps:
     
   - id: "jar creation"
     name: maven:3.6.3-jdk-11
-    dir: 'JarCreation/'
+    dir: 'JarCreation/word-count-beam'
     entrypoint: mvn
     args: ['clean','package']
     waitFor: ['get build number']
