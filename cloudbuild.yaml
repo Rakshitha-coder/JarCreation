@@ -19,5 +19,5 @@ steps:
     
   - id: "jar location"
     name: gcr.io/cloud-builders/gsutil
-    args: ['cp','/workspace/Word-count-beam/target/word-count-beam-0.0.1-SNAPSHOT-shaded.jar','gs://geometric-edge-296513/jars']
+    args: ['cp','/workspace/Word-count-beam/target/word-count-beam-bundled-0.0.1-SNAPSHOT.jar','gs://geometric-edge-296513/jars']
     waitFor: ['jar creation']
