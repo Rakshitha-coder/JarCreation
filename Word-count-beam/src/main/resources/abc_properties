@@ -1,0 +1,5 @@
+driverabc=com.mysql.cj.jdbc.Driver
+urlabc=jdbc:mysql://google/details?cloudSqlInstance=tough-muse-295506:us-central1:harshita&socketFactory=com.google.cloud.sql.mysql.SocketFactory&useSSL=false
+userabc=harshita
+passwordabc=1234
+
