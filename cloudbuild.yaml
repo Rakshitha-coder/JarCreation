@@ -2,7 +2,7 @@
 steps:
   - id: "get build number"
     name: gcr.io/cloud-builders/git
-    dir: 'JarCreation'
+    dir: 'JarCreation/Word-count-beam'
     entrypoint: 'bash'
     args:
       - '-c'
@@ -12,12 +12,12 @@ steps:
     
   - id: "jar creation"
     name: maven:3.6.3-jdk-11
-    dir: 'demos/cloudbuild-dataflow-demo/streaming'
+    dir: 'JarCreation/Word-count-beam'
     entrypoint: mvn
     args: ['package','-Dmaven.test.skip=true']
     waitFor: ['get build number']
     
   - id: "jar location"
     name: gcr.io/cloud-builders/gsutil
-    args: ['cp','/workspace/demos/cloudbuild-dataflow-demo/streaming/target/apache-beam-1.0-SNAPSHOT.jar','gs://geometric-edge-296513/jars']
+    args: ['cp','/workspace/JarCreation/Word-count-beam/target/apache-beam-1.0-SNAPSHOT.jar','gs://geometric-edge-296513/jars']
     waitFor: ['jar creation']
