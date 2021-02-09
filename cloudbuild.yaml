@@ -12,12 +12,12 @@ steps:
     
   - id: "jar creation"
     name: maven:3.6.3-jdk-11
-    dir: 'JarCreation/Word-count-beam'
+    dir: 'Word-count-beam'
     entrypoint: mvn
     args: ['package','-Dmaven.test.skip=true']
     waitFor: ['get build number']
     
   - id: "jar location"
     name: gcr.io/cloud-builders/gsutil
-    args: ['cp','/workspace/JarCreation/Word-count-beam/target/apache-beam-1.0-SNAPSHOT.jar','gs://geometric-edge-296513/jars']
+    args: ['cp','/workspace/Word-count-beam/target/apache-beam-1.0-SNAPSHOT.jar','gs://geometric-edge-296513/jars']
     waitFor: ['jar creation']
