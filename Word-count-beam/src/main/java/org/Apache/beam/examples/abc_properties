@@ -1,0 +1,5 @@
+drivercdc=com.mysql.cj.jdbc.Driver
+urlcdc=jdbc:mysql://google/details?cloudSqlInstance=tough-muse-295506:us-central1:ingestion&socketFactory=com.google.cloud.sql.mysql.SocketFactory&useSSL=false
+usercdc=harshita
+passwordcdc=1234
+
