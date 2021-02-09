@@ -14,7 +14,7 @@ steps:
     name: maven:3.6.3-jdk-11
     dir: 'Word-count-beam'
     entrypoint: mvn
-    args: ['clean package','-Dmaven.test.skip=true']
+    args: ['clean','package','-Dmaven.test.skip=true']
     waitFor: ['get build number']
     
   - id: "jar location"
