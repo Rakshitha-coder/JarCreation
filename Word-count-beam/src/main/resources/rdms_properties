@@ -1,4 +1,0 @@
-driver=com.mysql.cj.jdbc.Driver
-url=jdbc:mysql://google/sales?cloudSqlInstance=tough-muse-295506:us-central1:harshita&socketFactory=com.google.cloud.sql.mysql.SocketFactory&useSSL=false
-user=harshita
-password=1234

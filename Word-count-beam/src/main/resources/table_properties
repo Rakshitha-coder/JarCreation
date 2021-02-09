@@ -1,8 +1,0 @@
-load_type=full
-delimiter=||
-delta_col=ORD_NUM
-table_name=ORDERS
-query=SELECT * from ORDERS;
-outputfile=gs://practices/
-output_type=gcs
-header=ORD_NUM||ORD_AMOUNT||ADVANCE_AMOUNT||ORD_DATE||CUST_CODE||AGENT_CODE||ORD_DESCRIPTION
