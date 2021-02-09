@@ -1,0 +1,23 @@
+  
+steps:
+  - id: "get build number"
+    name: gcr.io/cloud-builders/git
+    dir: 'JarCreation'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        git rev-parse --short HEAD > _BUILDNUMBER
+    waitFor: ['-']
+    
+  - id: "jar creation"
+    name: maven:3.6.3-jdk-11
+    dir: 'demos/cloudbuild-dataflow-demo/streaming'
+    entrypoint: mvn
+    args: ['package','-Dmaven.test.skip=true']
+    waitFor: ['get build number']
+    
+  - id: "jar location"
+    name: gcr.io/cloud-builders/gsutil
+    args: ['cp','/workspace/demos/cloudbuild-dataflow-demo/streaming/target/apache-beam-1.0-SNAPSHOT.jar','gs://geometric-edge-296513/jars']
+    waitFor: ['jar creation']
