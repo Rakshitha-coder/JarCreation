@@ -1,9 +1,0 @@
-load_type=delta
-delimiter=,
-delta_col=AGENT_CODE
-table_name=AGENTS
-query=SELECT * from AGENTS where AGENT_CODE>$value;
-outputfile=tough-muse-295506:practices.AGENTS
-output_type=bq
-bq_load_type=APPEND
-header=AGENT_CODE,AGENT_NAME,WORKING_AREA,COMMISSION,PHONE_NO,COUNTRY
